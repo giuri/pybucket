@@ -5,11 +5,11 @@ import time
 
 def get15(chapter_sizes):
   chapters = list(range(0, len(chapter_sizes)))
-  two_items_chapters = sample(chapters, 5)
+  two_items_chapters = sample(chapters, 1)
   result = []
   for i in range(0, len(chapter_sizes)):
     if i in two_items_chapters:
-      items = sample(list(range(0, chapter_sizes[i])), 2)
+      items = sample(list(range(0, chapter_sizes[i])), 10)
       items.sort()
       result.append(items)
     else:
