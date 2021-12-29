@@ -17,6 +17,25 @@ def get15(chapter_sizes):
   return result
 
 
+def load_exercises_21_22(file_name):
+    exercise_tree = []
+    current_chapter = []
+    exercise_tree.append(current_chapter)
+    current_exercise = None
+    with open(file_name, 'r') as file:
+        for line in file:
+            if current_exercise is None:
+                current_exercise = line
+            else:
+                if line != '\n':
+                    current_exercise = current_exercise + line
+
+    if current_exercise is not None:
+        current_chapter.append(current_exercise)
+
+    return exercise_tree
+
+
 def load_exercises(file_name):
     exercise_tree = []
     current_chapter = None
